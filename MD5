@@ -1,0 +1,15 @@
+0ee047cdb7bdb2c84ffa4b453a2b5f31 *DESCRIPTION
+a2582574780fb673e6f9b609eb3b2250 *NAMESPACE
+63f057d5ff828405872d8d58e2f83256 *NEWS
+7dc9948e24cc69129ad8fc748cb6d13a *R/assert-is-date-string.R
+6312509fb414ed98253ebdc72bdbb080 *R/assert-is-time.R
+e31efc1ef7a66c0a0732458e98980a0c *R/imports.R
+989fe5eef821be5df2cb5a923b62541e *R/is-date-string.R
+f9540de2ac9bb2e84af80c468273fda7 *R/is-time.R
+0ea5e6161a0643c10ebb52156db7b049 *README.md
+dca6e14da3ee8e6425f35e0f98a95c32 *man/is_date_string.Rd
+6cda9b9530d32221b5636e0967bd24d1 *man/is_in_past.Rd
+2e36a039900e8ac261a529491436615d *po/R-assertive.datetimes.pot
+a071135ee6262e03f6b60a16d00a8422 *tests/testthat.R
+c426b4dc24a89087db7838ffd354e2ae *tests/testthat/test-is-date-string.R
+377ac5bd7540492580b14b48ccd52b4a *tests/testthat/test-is-time.R
