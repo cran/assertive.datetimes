@@ -1,6 +1,4 @@
-# TODO: add fns for lubridate objects
-# e.g., is_period_longer_than, is_duration_shorter_than, etc.
-
+#' @include workaround.R
 #' @rdname is_in_past   
 #' @export
 is_after <- function(x, y, .xname = get_name_in_parent(x), 
@@ -17,7 +15,7 @@ is_after <- function(x, y, .xname = get_name_in_parent(x),
   {
     coerce_to(y, "POSIXct", .yname)
   }
-  call_and_name(
+  call_and_name_retro(
     function(x)
     {
       ok <- x > y
@@ -43,7 +41,7 @@ is_before <- function(x, y, .xname = get_name_in_parent(x),
   {
     coerce_to(y, "POSIXct", .yname)
   }
-  call_and_name(
+  call_and_name_retro(
     function(x)
     {
       ok <- x < y
@@ -62,7 +60,7 @@ is_in_future <- function(x, .xname = get_name_in_parent(x))
   {
     x <- coerce_to(x, "POSIXct", .xname)
   }
-  call_and_name(
+  call_and_name_retro(
     function(x)
     {
       ok <- x > Sys.time()
@@ -114,7 +112,7 @@ is_in_past <- function(x, .xname = get_name_in_parent(x))
   {
     x <- coerce_to(x, "POSIXct", .xname)
   }
-  call_and_name(
+  call_and_name_retro(
     function(x)
     {
       ok <- x < Sys.time()
