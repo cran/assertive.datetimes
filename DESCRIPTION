@@ -1,8 +1,8 @@
 Package: assertive.datetimes
 Type: Package
 Title: Assertions to Check Properties of Dates and Times
-Version: 0.0-2
-Date: 2016-05-08
+Version: 0.0-3
+Date: 2020-07-30
 Author: Richard Cotton [aut, cre]
 Maintainer: Richard Cotton <richierocks@gmail.com>
 Authors@R: person("Richard", "Cotton", role = c("aut", "cre"), email =
@@ -12,10 +12,9 @@ Description: A set of predicates and assertions for checking the properties of
     want to include run-time testing features in their own packages.  End-users
     will usually want to use assertive directly.
 URL: https://bitbucket.org/richierocks/assertive.datetimes
-BugReports:
-        https://bitbucket.org/richierocks/assertive.datetimes/issues
+BugReports: https://bitbucket.org/richierocks/assertive.datetimes/issues
 Depends: R (>= 3.0.0)
-Imports: assertive.base (>= 0.0-2), assertive.types
+Imports: assertive.base (>= 0.0-7), assertive.types
 Suggests: testthat
 License: GPL (>= 3)
 LazyLoad: yes
@@ -25,10 +24,10 @@ Acknowledgments: Development of this package was partially funded by
         <http://qatar-weill.cornell.edu>.  The Core is supported by
         'Biomedical Research Program' funds, a program funded by Qatar
         Foundation.
-RoxygenNote: 5.0.1
+RoxygenNote: 7.1.1
 Collate: 'assert-is-date-string.R' 'imports.R' 'assert-is-time.R'
         'is-date-string.R' 'workaround.R' 'is-time.R'
 NeedsCompilation: no
-Packaged: 2016-05-10 07:00:07 UTC; rjc2003
+Packaged: 2020-07-30 17:38:28 UTC; richie
 Repository: CRAN
-Date/Publication: 2016-05-10 10:30:31
+Date/Publication: 2020-07-30 17:50:02 UTC

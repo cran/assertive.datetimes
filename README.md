@@ -2,6 +2,7 @@
 [![Is the package on CRAN?](http://www.r-pkg.org/badges/version/assertive.datetimes)](http://www.r-pkg.org/pkg/assertive.datetimes)
 [![SemaphoreCI Build Status](https://semaphoreci.com/api/v1/projects/8d10dcae-f422-4e66-8cad-43e510ccce5c/635114/badge.svg)](https://semaphoreci.com/richierocks/assertive-datetimes)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/jkk8d4rdi6h2hnkh?svg=true)](https://ci.appveyor.com/project/richierocks/assertive-datetimes)
+[![Research software impact](http://depsy.org/api/package/cran/assertive.datetimes/badge.svg)](http://depsy.org/package/r/assertive.datetimes)
 
 # assertive.datetimes
 

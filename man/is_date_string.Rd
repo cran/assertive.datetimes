@@ -6,11 +6,19 @@
 \alias{is_date_string}
 \title{Does the character vector contain dates?}
 \usage{
-assert_all_are_date_strings(x, format = "\%F \%T", na_ignore = FALSE,
-  severity = getOption("assertive.severity", "stop"))
+assert_all_are_date_strings(
+  x,
+  format = "\%F \%T",
+  na_ignore = FALSE,
+  severity = getOption("assertive.severity", "stop")
+)
 
-assert_any_are_date_strings(x, format = "\%F \%T", na_ignore = FALSE,
-  severity = getOption("assertive.severity", "stop"))
+assert_any_are_date_strings(
+  x,
+  format = "\%F \%T",
+  na_ignore = FALSE,
+  severity = getOption("assertive.severity", "stop")
+)
 
 is_date_string(x, format = "\%F \%T", .xname = get_name_in_parent(x))
 }
@@ -47,4 +55,3 @@ assert_all_are_date_strings("01Aug1979", format = "\%d\%b\%Y") #My DOB!
 \code{lubridate} package for automatic guessing of date formats (and other 
 date manipulation functions).
 }
-

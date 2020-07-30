@@ -4,17 +4,8 @@
 is_after <- function(x, y, .xname = get_name_in_parent(x), 
   .yname = get_name_in_parent(y))
 {
-  if(!is_date(x)) 
-  {
-    x <- coerce_to(x, "POSIXct", .xname)
-  }
-  y <- if(is_date(x))
-  {
-    coerce_to(y, "Date", .yname)  
-  } else
-  {
-    coerce_to(y, "POSIXct", .yname)
-  }
+  x <- coerce_to(x, "POSIXct", .xname)
+  y <- coerce_to(y, "POSIXct", .yname)
   call_and_name_retro(
     function(x)
     {
@@ -30,17 +21,8 @@ is_after <- function(x, y, .xname = get_name_in_parent(x),
 is_before <- function(x, y, .xname = get_name_in_parent(x), 
   .yname = get_name_in_parent(y))
 {  
-  if(!is_date(x)) 
-  {
-    x <- coerce_to(x, "POSIXct", .xname)
-  }
-  y <- if(is_date(x))
-  {
-    coerce_to(y, "Date", .yname)  
-  } else
-  {
-    coerce_to(y, "POSIXct", .yname)
-  }
+  x <- coerce_to(x, "POSIXct", .xname)
+  y <- coerce_to(y, "POSIXct", .yname)
   call_and_name_retro(
     function(x)
     {
@@ -55,11 +37,7 @@ is_before <- function(x, y, .xname = get_name_in_parent(x),
 #' @export
 is_in_future <- function(x, .xname = get_name_in_parent(x))
 {
-  # Dates stay as dates, otherwise convert to POSIXct
-  if(!is_date(x)) 
-  {
-    x <- coerce_to(x, "POSIXct", .xname)
-  }
+  x <- coerce_to(x, "POSIXct", .xname)
   call_and_name_retro(
     function(x)
     {
@@ -90,28 +68,25 @@ is_in_future <- function(x, .xname = get_name_in_parent(x))
 #' throw an error if the corresponding \code{is_*} function returns 
 #' \code{FALSE}.
 #' @details The current time is determined by \code{Sys.time}, and the 
-#' input is coerced to \code{POSIXct} format if necessary.
+#' input is coerced to \code{POSIXct} format.
 #' @note Note that the print method for \code{POSIXct} objects means that the
 #' cause attribute (in the event of failures) is not shown.  You can still 
 #' access it via, e.g., \code{cause(is_in_past(x))}.
 #' @seealso \code{\link{Sys.time}}.
 #' @examples
-#' x <- Sys.time() + c(-1, 100)
-#' is_in_past(x)
-#' is_in_future(x)
+#' datetime <- Sys.time() + c(-1, 100)
+#' is_in_past(datetime)
+#' is_in_future(datetime)
+#' date <- Sys.Date() + c(-1, 100)
 #' 
 #' # more generally, compare against any date-time
-#' is_before(x, as.POSIXct("9999-12-31"))
-#' is_after(x, as.POSIXct("0001-01-01"))
+#' is_before(datetime, as.POSIXct("9999-12-31"))
+#' is_after(datetime, as.POSIXct("0001-01-01"))
 #' @importFrom assertive.types is_date
 #' @export
 is_in_past <- function(x, .xname = get_name_in_parent(x))
 {
-  # Dates stay as dates, otherwise convert to POSIXct
-  if(!is_date(x)) 
-  {
-    x <- coerce_to(x, "POSIXct", .xname)
-  }
+  x <- coerce_to(x, "POSIXct", .xname)
   call_and_name_retro(
     function(x)
     {

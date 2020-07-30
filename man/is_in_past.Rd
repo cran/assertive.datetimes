@@ -2,12 +2,12 @@
 % Please edit documentation in R/assert-is-time.R, R/is-time.R
 \name{assert_all_are_after}
 \alias{assert_all_are_after}
-\alias{assert_all_are_before}
-\alias{assert_all_are_in_future}
-\alias{assert_all_are_in_past}
 \alias{assert_any_are_after}
+\alias{assert_all_are_before}
 \alias{assert_any_are_before}
+\alias{assert_all_are_in_future}
 \alias{assert_any_are_in_future}
+\alias{assert_all_are_in_past}
 \alias{assert_any_are_in_past}
 \alias{is_after}
 \alias{is_before}
@@ -15,35 +15,61 @@
 \alias{is_in_past}
 \title{Is the input in the past/future?}
 \usage{
-assert_all_are_after(x, y, na_ignore = FALSE,
-  severity = getOption("assertive.severity", "stop"))
+assert_all_are_after(
+  x,
+  y,
+  na_ignore = FALSE,
+  severity = getOption("assertive.severity", "stop")
+)
 
-assert_any_are_after(x, y, na_ignore = FALSE,
-  severity = getOption("assertive.severity", "stop"))
+assert_any_are_after(
+  x,
+  y,
+  na_ignore = FALSE,
+  severity = getOption("assertive.severity", "stop")
+)
 
-assert_all_are_before(x, y, na_ignore = FALSE,
-  severity = getOption("assertive.severity", "stop"))
+assert_all_are_before(
+  x,
+  y,
+  na_ignore = FALSE,
+  severity = getOption("assertive.severity", "stop")
+)
 
-assert_any_are_before(x, y, na_ignore = FALSE,
-  severity = getOption("assertive.severity", "stop"))
+assert_any_are_before(
+  x,
+  y,
+  na_ignore = FALSE,
+  severity = getOption("assertive.severity", "stop")
+)
 
-assert_all_are_in_future(x, na_ignore = FALSE,
-  severity = getOption("assertive.severity", "stop"))
+assert_all_are_in_future(
+  x,
+  na_ignore = FALSE,
+  severity = getOption("assertive.severity", "stop")
+)
 
-assert_any_are_in_future(x, na_ignore = FALSE,
-  severity = getOption("assertive.severity", "stop"))
+assert_any_are_in_future(
+  x,
+  na_ignore = FALSE,
+  severity = getOption("assertive.severity", "stop")
+)
 
-assert_all_are_in_past(x, na_ignore = FALSE,
-  severity = getOption("assertive.severity", "stop"))
+assert_all_are_in_past(
+  x,
+  na_ignore = FALSE,
+  severity = getOption("assertive.severity", "stop")
+)
 
-assert_any_are_in_past(x, na_ignore = FALSE,
-  severity = getOption("assertive.severity", "stop"))
+assert_any_are_in_past(
+  x,
+  na_ignore = FALSE,
+  severity = getOption("assertive.severity", "stop")
+)
 
-is_after(x, y, .xname = get_name_in_parent(x),
-  .yname = get_name_in_parent(y))
+is_after(x, y, .xname = get_name_in_parent(x), .yname = get_name_in_parent(y))
 
-is_before(x, y, .xname = get_name_in_parent(x),
-  .yname = get_name_in_parent(y))
+is_before(x, y, .xname = get_name_in_parent(x), .yname = get_name_in_parent(y))
 
 is_in_future(x, .xname = get_name_in_parent(x))
 
@@ -78,7 +104,7 @@ some time point.
 }
 \details{
 The current time is determined by \code{Sys.time}, and the 
-input is coerced to \code{POSIXct} format if necessary.
+input is coerced to \code{POSIXct} format.
 }
 \note{
 Note that the print method for \code{POSIXct} objects means that the
@@ -86,15 +112,15 @@ cause attribute (in the event of failures) is not shown.  You can still
 access it via, e.g., \code{cause(is_in_past(x))}.
 }
 \examples{
-x <- Sys.time() + c(-1, 100)
-is_in_past(x)
-is_in_future(x)
+datetime <- Sys.time() + c(-1, 100)
+is_in_past(datetime)
+is_in_future(datetime)
+date <- Sys.Date() + c(-1, 100)
 
 # more generally, compare against any date-time
-is_before(x, as.POSIXct("9999-12-31"))
-is_after(x, as.POSIXct("0001-01-01"))
+is_before(datetime, as.POSIXct("9999-12-31"))
+is_after(datetime, as.POSIXct("0001-01-01"))
 }
 \seealso{
 \code{\link{Sys.time}}.
 }
-
